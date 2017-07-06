@@ -197,7 +197,7 @@ describe('javascript-Recall', function() {
         expect(result).toEqual(120); // = 5 * 4 * 3 * 2 * 1
     });
 
-    xit('finds all possible anagrams of a word', function() {
+    it('finds all possible anagrams of a word', function() {
         var result = findAnagrams('mad');
         var expectedAnagrams = ["adm", "amd", "dam", "dma", "mad", "mda"];
         for (var anagram of expectedAnagrams) {
