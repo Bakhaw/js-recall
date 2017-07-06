@@ -147,8 +147,25 @@ var getDomainName = function(string) {
 }
 
 var titleize = function(string) {
-
-}
+  var exceptions = ['the', 'and'];
+  function titleWord (word, exceptions) {
+    if (exceptions.indexOf(word) !== -1) return word;
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+  }
+  var titleizeArray = [];
+  var firstWordOfSentence = true;
+  for (var word of string.split(' ')) {
+      if (firstWordOfSentence) {
+        titleizeArray.push(titleWord(word, []))
+        firstWordOfSentence = false;
+      }
+      else {
+        titleizeArray.push(titleWord(word, exceptions))
+      }
+      if (word.slice(-1) === '.') firstWordOfSentence = true;
+  }
+  return titleizeArray.join(' ');
+  }
 
 var checkForSpecialCharacters = function(string) {
 

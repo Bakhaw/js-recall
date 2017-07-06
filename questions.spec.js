@@ -169,11 +169,11 @@ describe('javascript-Recall', function() {
         expect(result2).toEqual('ssh.makersacademy');
     });
 
-    xit('txitleizes a string', function() {
-        var result = txitleize('the lion the wxitch and the wardrobe');
-        expect(result).toEqual('The Lion the Wxitch and the Wardrobe');
-        var result2 = txitleize('the lion the wxitch. and the wardrobe');
-        expect(result2).toEqual('The Lion the Wxitch. And the Wardrobe');
+    it('titleizes a string', function() {
+        var result = titleize('the lion the witch and the wardrobe');
+        expect(result).toEqual('The Lion the Witch and the Wardrobe');
+        var result2 = titleize('the lion the witch. and the wardrobe');
+        expect(result2).toEqual('The Lion the Witch. And the Wardrobe');
     });
 
     xit('checks a string for special characters', function() {
